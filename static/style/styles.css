@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body{
+    margin: 0;
+    /* min-height: 100vh; */
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column; */
+    background-color:#bababa;
+}
+
+.profile-header {
+    position: relative;
+    width: 100%;
+    height: 850px; /* Tinggi bagian header/menu */
+    background: url('../image/gbrielgallerium\ WebWelcome.png') no-repeat center center;
+    background-size: cover;
+}
+@media (max-width: 700px) and (min-width: 300px) {
+    .profile-header {
+        
+        width: 100%;
+        background: url('../image/gbrielgallerium\ WebMobile.png') no-repeat center center;
+        background-size: cover;
+    }
+  }
+
+.profile-menu {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px; /* Tinggi menu */
+    background-color: rgb(0, 0, 0); /* Warna menu dengan transparansi */
+    z-index: 1; /* Pastikan menu ada di atas */
+}
+
+.profile-picture-container {
+    position: absolute;
+    bottom: 5px; /* Setengah tinggi gambar profil agar posisinya terbelah */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2; /* Pastikan gambar profil ada di atas menu */
+
+}
+
+.profile-picture {
+    width:  150px; /* Sesuaikan ukuran gambar profil */
+    height: 150px;
+    border-radius: 50%; /* Membuat gambar berbentuk lingkaran */
+    border: 3px solid white; /* Bingkai putih di sekitar gambar */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Memberikan bayangan */
+}
+
+
+.top-welcome{
+    font-size: 40px;
+}
+
+.profile-line{
+    /* background-color: #f7faff; */
+    background-color: #005eff;
+}
+.navigation{
+    background-color:   rgb(0, 0, 0);
+}
+
+.content{
+    background-color: #bababa;
+}
+
+.navigation #option{
+    padding-top:20px ;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    transition: transform 0.5s ease-in-out, max-width 0.5s ease-in-out;
+}
+
+.navigation #option:hover{
+    filter: drop-shadow(1px 1px 10px #151515e7);
+    transform: scale(1.05);
+    transition-duration: 1s;
+}
