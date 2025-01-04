@@ -91,13 +91,46 @@ body{
     transform: scale(1.05);
     transition-duration: 1s;
 }
+/* Gaya default untuk overlay */
+.overlay {
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.61);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+    padding: 20px; /* Sesuaikan padding */
+}
 
+.overlay img {
+    max-height: 90%; /* Batasi tinggi gambar maksimum */
+    max-width: 90%; /* Batasi lebar gambar maksimum */
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.5);
+    object-fit: contain; /* Pastikan gambar proporsional */
+}
+
+/* Efek saat gambar ditargetkan */
+.overlay:target img {
+    animation: ZoomAndFade 2s;
+}
+.hidden {
+    display: none; /* Sembunyikan overlay secara default */
+}
+
+
+/* 
 .contents{
     max-width: 100%;
     height: 900px;
     margin: 100px;
     padding: 100px;
-}
+} */
 
 
   /* .image-container {
@@ -113,8 +146,8 @@ body{
     justify-items: center;
     align-items: center;
   } */
-
+/* 
   .image-container img {
     min-width: 100%;
     transition: transform 0.5s ease-in-out;
-  }
+  } */
