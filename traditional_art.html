@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Digital Art</title>
+	<link rel="stylesheet" href="static/style/styles.css">
+	<script src="https://cdn.tailwindcss.com"></script>
+	
+</head>
+<body >
+
+	<div class="profile-header">
+		<div class="profile-menu">
+			<!-- Tambahkan elemen menu di sini -->
+		</div>
+		<div class="profile-picture-container">
+			<img src="static/image/profile-pict.jpg" alt="Profile Picture" class="profile-picture">
+		</div>
+	</div>
+	
+    
+	<nav class="navigation p-6 ">
+		<div class="flex justify-center gap-6">
+            <div id="option" class="flex-1 max-w-xs bg-white text-center py-4 rounded-lg ">
+                <a href="digital_art.html" class="block text-gray-800 font-semibold">Digital Art</a>
+            </div>
+            <div id="home-btn" class="flex-1 max-w-xs bg-cyan-500 text-center py-4 rounded-lg ">
+                <a href="index.html" class="block text-white font-semibold" >Home</a>
+            </div>
+            
+            <div id="option" class="flex-1 max-w-xs bg-white text-center py-4 rounded-lg ">
+                <a href="oters.html" class="block text-gray-800 font-semibold">Others</a>
+            </div>
+		</div>
+	  </nav>
+	  
+
+	<div class="contents">
+		
+		<div class="image-container ">
+			<div id="photo-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 justify-center items-center ">
+				<!-- Foto-foto akan dimasukkan secara dinamis oleh JavaScript -->
+			</div>
+			<div class="overlay" id="${photo.id}">
+				<a href="#" class="close-btn text-white " ><img src="static/image/asset/close-btn.png" alt="Close Button" ></a>
+				
+				
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function clickImg() {
+			const photos = [        
+            
+            { "url": "static/image/1.jpg", "desc": "", "id": "gambar 1" },
+            { "url": "static/image/2.jpg", "desc": "", "id": "gambar 2" },
+            { "url": "static/image/3.jpg", "desc": "", "id": "gambar 3" },
+            { "url": "static/image/4.jpg", "desc": "", "id": "gambar 4" },
+            { "url": "static/image/5.jpg", "desc": "", "id": "gambar 5" },
+            { "url": "static/image/6.jpg", "desc": "", "id": "gambar 6" },
+            { "url": "static/image/7.jpg", "desc": "", "id": "gambar 7" },
+            { "url": "static/image/8.jpg", "desc": "", "id": "gambar 8" },
+            { "url": "static/image/9.jpg", "desc": "", "id": "gambar 9" },
+            { "url": "static/image/10.jpg", "desc": "", "id": "gambar 10" },
+            { "url": "static/image/11.jpg", "desc": "", "id": "gambar 11" },
+            { "url": "static/image/12.jpg", "desc": "", "id": "gambar 12" },
+            { "url": "static/image/13.jpg", "desc": "", "id": "gambar 13" },
+            { "url": "static/image/14.jpg", "desc": "", "id": "gambar 14" },
+            { "url": "static/image/15.jpg", "desc": "", "id": "gambar 15" },
+            { "url": "static/image/16.jpg", "desc": "", "id": "gambar 16" },
+            { "url": "static/image/17.jpg", "desc": "", "id": "gambar 17" },
+            { "url": "static/image/18.jpg", "desc": "", "id": "gambar 18" },
+            { "url": "static/image/19.jpg", "desc": "", "id": "gambar 19" },
+            { "url": "static/image/20.jpg", "desc": "", "id": "gambar 20" },
+            { "url": "static/image/21.jpg", "desc": "", "id": "gambar 21" },
+            { "url": "static/image/22.jpg", "desc": "", "id": "gambar 22" },
+            { "url": "static/image/23.jpg", "desc": "", "id": "gambar 23" },
+            { "url": "static/image/24.jpg", "desc": "", "id": "gambar 24" },
+            { "url": "static/image/25.jpg", "desc": "", "id": "gambar 25" },
+            { url: "static/image/61.jpg", desc: "", id: "gambar 61" },
+
+
+            { url: "static/image/62.jpg", desc: "", id: "gambar 62" },
+            { url: "static/image/63.jpg", desc: "", id: "gambar 63" },
+            { url: "static/image/64.jpg", desc: "", id: "gambar 64" },
+            { url: "static/image/65.jpg", desc: "", id: "gambar 65" },
+            { url: "static/image/66.jpg", desc: "", id: "gambar 66" },
+            { url: "static/image/67.jpg", desc: "", id: "gambar 67" },
+            { url: "static/image/68.jpg", desc: "", id: "gambar 68" },
+            { url: "static/image/69.jpg", desc: "", id: "gambar 69" },
+            { url: "static/image/70.jpg", desc: "", id: "gambar 70" },
+            { url: "static/image/71.jpg", desc: "", id: "gambar 71" },
+            { url: "static/image/72.jpg", desc: "", id: "gambar 72" },
+            { url: "static/image/73.jpg", desc: "", id: "gambar 73" },
+            { url: "static/image/74.jpg", desc: "", id: "gambar 74" },
+            { url: "static/image/75.jpg", desc: "", id: "gambar 75" },
+            { url: "static/image/76.jpg", desc: "", id: "gambar 76" },
+            { url: "static/image/77.jpg", desc: "", id: "gambar 77" },
+            { url: "static/image/78.jpg", desc: "", id: "gambar 78" },
+            { url: "static/image/79.jpg", desc: "", id: "gambar 79" },
+            { url: "static/image/80.jpg", desc: "", id: "gambar 80" },
+            { url: "static/image/81.jpg", desc: "", id: "gambar 81" },
+            { url: "static/image/82.jpg", desc: "", id: "gambar 82" },
+            { url: "static/image/83.jpg", desc: "", id: "gambar 83" },
+            { url: "static/image/84.jpg", desc: "", id: "gambar 84" },
+
+            { "url": "static/image/26.jpg", "desc": "", "id": "gambar 26" },
+            // { "url": "static/image/27.jpg", "desc": "", "id": "gambar 27" },
+            { "url": "static/image/28.jpg", "desc": "", "id": "gambar 28" },
+            { "url": "static/image/29.jpg", "desc": "", "id": "gambar 29" },
+            { "url": "static/image/30.jpg", "desc": "", "id": "gambar 30" },
+            { "url": "static/image/31.jpg", "desc": "", "id": "gambar 31" },
+            { "url": "static/image/32.jpg", "desc": "", "id": "gambar 32" },
+            { "url": "static/image/33.jpg", "desc": "", "id": "gambar 33" },
+            { "url": "static/image/34.jpg", "desc": "", "id": "gambar 34" },
+            { "url": "static/image/35.jpg", "desc": "", "id": "gambar 35" },
+            { "url": "static/image/36.jpg", "desc": "", "id": "gambar 36" },
+            { "url": "static/image/37.jpg", "desc": "", "id": "gambar 37" },
+            { "url": "static/image/38.jpg", "desc": "", "id": "gambar 38" },
+            { "url": "static/image/39.jpg", "desc": "", "id": "gambar 39" },
+            { "url": "static/image/40.jpg", "desc": "", "id": "gambar 40" },
+            { "url": "static/image/41.jpg", "desc": "", "id": "gambar 41" },
+            { "url": "static/image/42.jpg", "desc": "", "id": "gambar 42" },
+            { "url": "static/image/43.jpg", "desc": "", "id": "gambar 43" },
+            { "url": "static/image/44.jpg", "desc": "", "id": "gambar 44" },
+            { "url": "static/image/45.jpg", "desc": "", "id": "gambar 45" },
+            { "url": "static/image/46.jpg", "desc": "", "id": "gambar 46" },
+            { "url": "static/image/47.jpg", "desc": "", "id": "gambar 47" },
+            { "url": "static/image/48.jpg", "desc": "", "id": "gambar 48" },
+            { "url": "static/image/49.jpg", "desc": "", "id": "gambar 49" },
+            { "url": "static/image/50.jpg", "desc": "", "id": "gambar 50" },
+            { "url": "static/image/51.jpg", "desc": "", "id": "gambar 51" }
+       
+        
+    ];
+
+    // Referensi ke elemen grid
+    const photoGrid = document.getElementById("photo-grid");
+
+    // Referensi ke elemen overlay
+    const overlay = document.querySelector(".overlay");
+    const overlayImg = overlay.querySelector("img");
+
+	const photoPerPage = 12;
+	const currenPage= 1;
+
+    // Loop melalui array data gambar
+    photos.forEach(photo => {
+        // Buat elemen div
+        const photoDiv = document.createElement("div");
+        photoDiv.className = "photo w-full h-auto object-cover bg-white rounded-lg";
+
+        // Tambahkan elemen anchor dan img
+        photoDiv.innerHTML = `
+            <img src="${photo.url}" alt="${photo.desc}" style="cursor: url('static/image/hand.png'),pointer;" 
+                 class="w-full h-auto rounded-lg transform transition-transform duration-500 hover:scale-110 hover:shadow-2xl cursor-pointer">
+            <div class="desc text-center text-gray-700 mt-2">${photo.desc}</div>
+        `;
+
+        // Tambahkan event listener untuk klik gambar
+			photoDiv.querySelector("img").addEventListener("click", () => {
+				overlayImg.src = photo.url; // Set gambar di overlay
+				overlay.classList.remove("hidden"); // Tampilkan overlay
+			});
+
+				// Tambahkan elemen ke grid
+				photoGrid.appendChild(photoDiv);
+			});
+
+    // Event listener untuk menutup overlay
+			
+			overlay.classList.add("hidden"); // Sembunyikan overlay
+
+			document.querySelector(".close-btn").addEventListener("click", () => {
+				overlay.classList.add("hidden"); // Sembunyikan overlay
+			});
+			
+		};
+		clickImg();
+		
+	</script>
+	
+
+
+
+</body>
+</html>

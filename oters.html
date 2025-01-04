@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Digital Art</title>
+	<link rel="stylesheet" href="static/style/styles.css">
+	<script src="https://cdn.tailwindcss.com"></script>
+	
+</head>
+<body >
+
+	<div class="profile-header">
+		<div class="profile-menu">
+			<!-- Tambahkan elemen menu di sini -->
+		</div>
+		<div class="profile-picture-container">
+			<img src="static/image/profile-pict.jpg" alt="Profile Picture" class="profile-picture">
+		</div>
+	</div>
+	
+    
+	<nav class="navigation p-6 ">
+		<div class="flex justify-center gap-6">
+            <div id="option" class="flex-1 max-w-xs bg-white text-center py-4 rounded-lg ">
+                <a href="digital_art.html" class="block text-gray-800 font-semibold">Digital Art</a>
+            </div>
+            <div id="option" class="flex-1 max-w-xs bg-white text-center py-4 rounded-lg ">
+                <a href="traditional_art.html" class="block text-gray-800 font-semibold">Traditional Art</a>
+            </div>
+            <div id="home-btn" class="flex-1 max-w-xs bg-cyan-500 text-center py-4 rounded-lg ">
+                <a href="index.html" class="block text-white font-semibold" >Home</a>
+            </div>
+		</div>
+	  </nav>
+	  
+
+	<div class="contents">
+		
+		<div class="image-container ">
+            <div class="w-full h-screen justify-items-center mt-64"><p class="text-2xl font-mono">COMING SOON</p></div>
+			<div id="photo-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 justify-center items-center ">
+				<!-- Foto-foto akan dimasukkan secara dinamis oleh JavaScript -->
+
+			</div>
+			<div class="overlay" id="${photo.id}">
+				<a href="#" class="close-btn text-white " ><img src="static/image/asset/close-btn.png" alt="Close Button" ></a>
+				
+				
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function clickImg() {
+			const photos = [        
+            
+            
+       
+        
+    ];
+
+    // Referensi ke elemen grid
+    const photoGrid = document.getElementById("photo-grid");
+
+    // Referensi ke elemen overlay
+    const overlay = document.querySelector(".overlay");
+    const overlayImg = overlay.querySelector("img");
+
+	const photoPerPage = 12;
+	const currenPage= 1;
+
+    // Loop melalui array data gambar
+    photos.forEach(photo => {
+        // Buat elemen div
+        const photoDiv = document.createElement("div");
+        photoDiv.className = "photo w-full h-auto object-cover bg-white rounded-lg";
+
+        // Tambahkan elemen anchor dan img
+        photoDiv.innerHTML = `
+            <img src="${photo.url}" alt="${photo.desc}" style="cursor: url('static/image/hand.png'),pointer;" 
+                 class="w-full h-auto rounded-lg transform transition-transform duration-500 hover:scale-110 hover:shadow-2xl cursor-pointer">
+            <div class="desc text-center text-gray-700 mt-2">${photo.desc}</div>
+        `;
+
+        // Tambahkan event listener untuk klik gambar
+			photoDiv.querySelector("img").addEventListener("click", () => {
+				overlayImg.src = photo.url; // Set gambar di overlay
+				overlay.classList.remove("hidden"); // Tampilkan overlay
+			});
+
+				// Tambahkan elemen ke grid
+				photoGrid.appendChild(photoDiv);
+			});
+
+    // Event listener untuk menutup overlay
+			
+			overlay.classList.add("hidden"); // Sembunyikan overlay
+
+			document.querySelector(".close-btn").addEventListener("click", () => {
+				overlay.classList.add("hidden"); // Sembunyikan overlay
+			});
+			
+		};
+		clickImg();
+		
+	</script>
+	
+
+
+
+</body>
+</html>
