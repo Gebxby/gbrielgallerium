@@ -114,6 +114,12 @@ body{
     box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.5);
     object-fit: contain; /* Pastikan gambar proporsional */
 }
+.overlay .caption {
+    font-size: 1rem; /* Sesuaikan ukuran font */
+    color: #333;    /* Warna teks */
+    margin-top: 1rem;
+    word-wrap: break-word;
+}
 
 /* Efek saat gambar ditargetkan */
 .overlay:target img {

@@ -22,8 +22,8 @@
     <!-- Navigation -->
     <nav class="navigation p-6">
         <div class="flex justify-center gap-6">
-            <div id="home-btn" class="flex-1 max-w-xs bg-cyan-500 text-center py-4 rounded-lg">
-                <a href="index.html" class="block text-white font-semibold" id="home-btn">Home</a>
+            <div id="home-btn" class="flex-1 max-w-xs bg-cyan-500 text-center  rounded-lg">
+                <a href="index.html" class="block text-white w-full h-full font-semibold" id="home-btn">Home</a>
             </div>
             <div id="option" class="flex-1 max-w-xs bg-white text-center py-4 rounded-lg">
                 <a href="traditional_art.html" class="block text-gray-800 font-semibold">Traditional Art</a>
@@ -45,22 +45,25 @@
 
     <!-- Overlay -->
     <div class="overlay hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-        <div class="relative bg-white p-6 rounded-lg">
-            <img src="" alt="Overlay Image" class="max-w-full max-h-[90vh] rounded-lg">
+        <div class="relative bg-white p-6 rounded-lg max-w-[90%] text-center">
+            <img src="" alt="Overlay Image" class="max-w-full max-h-[70vh] rounded-lg">
+            <p class="caption mt-4 text-gray-800"></p> <!-- Elemen untuk deskripsi -->
             <button class="close-btn absolute top-2 right-2 text-black bg-gray-200 rounded-full p-2 hover:bg-gray-300">✕</button>
         </div>
     </div>
+    
 
     <script>
         function initializeGallery() {
             const photos = [
-                { url: "static/image/55.jpg", desc: "Image 55", id: "gambar 55" },
-                { url: "static/image/56.jpg", desc: "Image 56", id: "gambar 56" },
-                { url: "static/image/57.jpg", desc: "Image 57", id: "gambar 57" },
-                { url: "static/image/58.jpg", desc: "Image 58", id: "gambar 58" },
-                { url: "static/image/59.jpg", desc: "Image 59", id: "gambar 59" },
-                { url: "static/image/52.jpg", desc: "Image 52", id: "gambar 52" },
-                { url: "static/image/54.jpg", desc: "Image 54", id: "gambar 54" }
+                { url: "static/image/85.jpg", desc: "crimson Love", id: "gambar 85" },
+                { url: "static/image/55.jpg", desc: "Gojo Satoru JoJo Artstyle", id: "gambar 55" },
+                { url: "static/image/56.jpg", desc: "Sukuna JoJo Artstyle", id: "gambar 56" },
+                { url: "static/image/57.jpg", desc: "My OC JoJo Artstyle", id: "gambar 57" },
+                { url: "static/image/58.jpg", desc: "My OC JoJo Artstyle", id: "gambar 58" },
+                { url: "static/image/59.jpg", desc: "OC Stand JoJo Artstyle", id: "gambar 59" },
+                { url: "static/image/52.jpg", desc: "My OC JoJo Artstyle", id: "gambar 52" },
+                { url: "static/image/54.jpg", desc: "itadori yuuji JoJo Artstyle", id: "gambar 54" }
             ];
 
             const photoGrid = document.getElementById("photo-grid");
@@ -74,17 +77,19 @@
                 photoDiv.className = "photo w-full h-auto object-cover bg-white rounded-lg";
                 photoDiv.innerHTML = `
                     <img src="${photo.url}" alt="${photo.desc}" 
-                         class="w-full h-auto rounded-lg transform transition-transform duration-500 hover:scale-110 hover:shadow-2xl cursor-pointer">
-                    <div class="desc text-center text-gray-700 mt-2">${photo.desc}</div>
+                        class="w-full h-auto rounded-lg transform transition-transform duration-500 hover:scale-110 hover:shadow-2xl cursor-pointer">
+                    
                 `;
                 photoGrid.appendChild(photoDiv);
 
                 // Event klik untuk gambar di grid
                 photoDiv.querySelector("img").addEventListener("click", () => {
                     overlayImg.src = photo.url;
+                    overlay.querySelector(".caption").textContent = photo.desc; // Tambahkan deskripsi
                     overlay.classList.remove("hidden");
                 });
             });
+
 
             // Event klik untuk foto profil
             const profilePicture = document.querySelector(".profile-picture");
